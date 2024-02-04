@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
-import { FaDiscord, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { TfiYoutube } from 'react-icons/tfi'
 
 const Socials = () => {
