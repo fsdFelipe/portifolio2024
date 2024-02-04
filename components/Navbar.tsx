@@ -56,9 +56,14 @@ const Navbar = () => {
                 {/** Botão Mobile */}
                 <div onClick={handleMobile} className='block sm:hidden z-10'>
                     {mobile ? (
-                        <AiOutlineClose size={20} />
+                        <div className=' flex items-center justify-center gap-3'>
+                            <ThemeSwitcher />
+                            <AiOutlineClose size={20} />
+                        </div>
                     ) : (
-                        <AiOutlineMenu size={20} />
+                        <div className=' flex items-center justify-center gap-3'>
+                            <ThemeSwitcher /><AiOutlineMenu size={20} />
+                        </div>
                     )}
                 </div>
                 {/** Menu Mobile */}
