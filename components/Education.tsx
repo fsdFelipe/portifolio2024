@@ -38,7 +38,7 @@ const Education = () => {
             <div className='lg:w-2/3 w-full items-center justify-center flex sm:px-6 p-2'>
                 <ul className='w-full flex flex-col items-start justify-start'>
                     <Details
-                        type='Getão da Tecnologia da Informação' place='Fatec - Guaratingueta'
+                        type='Gestão da Tecnologia da Informação' place='Fatec - Guaratingueta'
                         time='2015-2017'
                         info='Tecnólogo'
                     />

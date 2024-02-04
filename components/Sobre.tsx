@@ -50,7 +50,7 @@ const Sobre = () => {
                                 },
                             }}
                         >
-                            Entusiasta de TI e programação, apaixonado por desafios, busco constantemente transcender limites e transformar ideias em experiências significativas. Meu portfólio é o reflexo do meu compromisso em trazer inovação, originalidade e excelência a cada projeto que abraço.
+                            Entusiasta de TI e programação, apaixonado por desafios, busco constantemente transcender limites e transformar ideias em experiências significativas. Meu portifólio é o reflexo do meu compromisso em trazer inovação, originalidade e excelência a cada projeto que abraço.
                         </motion.p>
                     </div>
                     <div className='sm:relative hidden lg:w-1/2 w-full h-full sm:flex items-center justify-center p-6'>

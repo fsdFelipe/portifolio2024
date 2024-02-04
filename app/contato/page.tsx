@@ -23,11 +23,11 @@ const page = () => {
                     className='sm:p-6 p-1'
                 >
                     Estou disponível para  oportunidades como freelancer - especialmente em
-                    projetos grandes e ambiciosos. No entando, se você tem qualer demanda
-                    ou perguntas, não hesite em entrar em contato usnado o formulário abaixo.
-                    Todas contatos seão respondidos o mais rápido possível
+                    projetos grandes e ambiciosos. No entando, se você tem qualquer demanda
+                    ou perguntas, não hesite em entrar em contato usando o formulário abaixo.
+                    Todos contatos serão respondidos o mais rápido possível
                 </motion.p>
-                <div className="w-full sm:p-6 p-1">
+                <div className="w-full sm:p-6 p-1 dark:text-black">
                     <form className='flex-col gap-3'>
                         <div className='flex flex-col gap-1'>
                             <input placeholder="Nome e sobrenome"
@@ -49,14 +49,14 @@ const page = () => {
                                 className="w-full px-4 border h-10"
                             />
                             <textarea
-                                placeholder="Message"
+                                placeholder="Mensagem"
                                 required
                                 className='w-full h-12 border min-h-36 p-2'
                             ></textarea>
                         </div>
                         <input type="submit"
-                            className="border w-full md:w-24 px-2 py-1 cursor-pointer hover:bg-teal-400 rounded-md mt-1"
-                            value="SEND" />
+                            className="border w-full md:w-24 py-1 cursor-pointer dark:text-white hover:bg-teal-400 rounded-md mt-1"
+                            value="ENVIAR" />
                     </form>
                 </div>
             </div>
