@@ -11,30 +11,16 @@ import { usePathname } from 'next/navigation'
 
 
 const Navbar = () => {
-    const [scrollPosition, setScrollPosition] = useState(0);
     const [mobile, setMobile] = useState(false)
     const pathname = usePathname()
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrollPosition(window.scrollY);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
 
     const handleMobile = () => {
         setMobile(!mobile);
     };
 
     return (
-        <div className={`fixed lg:w-2/3 w-full flex items-center z-30 border p-1 px-4 lg:px-12 rounded-lg transition-all 
-        ease-in ${scrollPosition > 90 ? 'lg:top-0 lg:w-full lg:px-12 top-0 duration-300' : 'lg:top-10 top-0 '}`}>
-            <div className='absolute top-0 left-0 w-full h-full -z-10 flex bg-white opacity-60 blur-sm' />
+        <div className='fixed lg:w-2/3 w-full flex items-center z-30 border p-1 px-4 lg:px-12 rounded-lg top-0.5'>
+            <div className='absolute top-0 left-0 w-full h-full -z-10 flex dark:bg-white bg-gray-400 opacity-60 blur-sm' />
             <nav className='flex w-full items-center justify-between'>
                 <Link href='/'>
                     <Image src='/images/Logo.png' width={35} height={35} alt='Inicio' />

@@ -2,9 +2,49 @@
 import AnimatedText from '@/components/ui/AnimatedText'
 import TransitionEffect from '@/components/ui/TransitionEffect'
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useState } from 'react'
 
-const page = () => {
+
+const Page = () => {
+    const [name, setName] = useState('');
+    const [from, setFrom] = useState('');
+    const [subject, setSubject] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleSubmit = async (event: React.FormEvent) => {
+        event.preventDefault();
+
+        const data = {
+            from: `${name} <${from}>`,
+            subject,
+            message,
+        };
+
+        try {
+            const response = await fetch('https://portifolio-uzr8.onrender.com/mail/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                alert('Seu email foi enviado! Em breve entrarei em contato');
+                console.log(await response.json());
+
+                // Reset form
+                setName('');
+                setFrom('');
+                setSubject('');
+                setMessage('');
+            } else {
+                console.error('Failed to send email');
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    };
     return (
         <div className='w-full h-full md:pt-20 pt-12 flex items-start justify-center'>
             <TransitionEffect />
@@ -28,11 +68,13 @@ const page = () => {
                     Todos contatos serão respondidos o mais rápido possível
                 </motion.p>
                 <div className="w-full sm:p-6 p-1 dark:text-black">
-                    <form className='flex-col gap-3'>
+                    <form className='flex-col gap-3' onSubmit={handleSubmit}>
                         <div className='flex flex-col gap-1'>
                             <input placeholder="Nome e sobrenome"
                                 type="text" required
                                 className="w-full px-4 border h-10"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
                             />
                             <input
                                 placeholder="Email"
@@ -40,18 +82,23 @@ const page = () => {
                                 name='email'
                                 required
                                 className="w-full px-4 border h-10"
+                                value={from}
+                                onChange={(e) => setFrom(e.target.value)}
                             />
                             <input
                                 placeholder="Assunto"
                                 type="text"
-                                name="subject"
                                 required
                                 className="w-full px-4 border h-10"
+                                value={subject}
+                                onChange={(e) => setSubject(e.target.value)}
                             />
                             <textarea
                                 placeholder="Mensagem"
                                 required
                                 className='w-full h-12 border min-h-36 p-2'
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
                             ></textarea>
                         </div>
                         <input type="submit"
@@ -64,4 +111,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
